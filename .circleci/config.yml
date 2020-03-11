@@ -9,16 +9,14 @@ jobs:
       - run: echo $AWS_ACCESS_KEY_ID
 workflows:
   cdk-deploy:
-    triggers:
-      - schedule:
+    jobs:
+      - deploy:
+          context: AWS_CREDENTIALS
           filters:
             branches:
               only:
                 - master
                 - develop
-    jobs:
-      - deploy:
-          context: AWS_CREDENTIALS
 
 
 
