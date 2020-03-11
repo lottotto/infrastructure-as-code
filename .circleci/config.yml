@@ -18,7 +18,7 @@ workflows:
                 - develop
     jobs:
       - deploy:
-        context: AWS_CREDENTIALS
+          context: AWS_CREDENTIALS
 
 
 
