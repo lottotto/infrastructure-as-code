@@ -12,6 +12,7 @@ jobs:
       - run: ls -la
       - run: cdk --version
       - run: cd src
+      - run: pwd
       - run: pip install -r requirements.txt
       - run: cdk deploy
 workflows:
