@@ -13,8 +13,12 @@ jobs:
       - run: cdk --version
       - run: cd src
       - run: pwd
-      - run: pip install -r src/requirements.txt
-      - run: cdk deploy
+      - run: 
+          command: pip install -r requirements.txt
+          working_directory: src
+      - run: 
+          command: cdk deploy
+          working_directory: src
 workflows:
   cdk-deploy:
     jobs:
