@@ -6,6 +6,7 @@ jobs:
     docker: 
       - image: danish9966/aws-cdk:0.2.1
     steps:
+      - checkout
       - run: echo $AWS_ACCESS_KEY_ID
       - run: pwd
       - run: ls -la
