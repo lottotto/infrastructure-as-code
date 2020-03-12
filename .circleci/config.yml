@@ -26,7 +26,7 @@ jobs:
           command: pip install -r requirements.txt
           working_directory: src
       - run:
-          command: cdk destroy
+          command: cdk destroy --force
           working_directory: src
 workflows:
   cdk-deploy:
