@@ -8,7 +8,7 @@ jobs:
     steps:
       - run: echo $AWS_ACCESS_KEY_ID
       - run: ls -la
-      - run: cat ~/.aws/credentials
+      - run: aws --version
 workflows:
   cdk-deploy:
     jobs:
