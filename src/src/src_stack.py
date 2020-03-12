@@ -9,8 +9,8 @@ class SrcStack(core.Stack):
 
         # The code that defines your stack goes here
         bucket = s3.Bucket(self, 
-                          "MyFirstBucket", 
-                          versioned=True,
+                          "MyyyyyFirstBucket-", 
+                          versioned=False,
                           removal_policy= core.RemovalPolicy.DESTROY
                           ) 
 
