@@ -37,6 +37,8 @@ workflows:
                 - develop
       - destroy:
           context: AWS_CREDENTIALS
+          requires:
+            - deploy
           filters:
             branches:
               only:
