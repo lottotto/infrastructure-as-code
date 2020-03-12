@@ -8,4 +8,9 @@ class SrcStack(core.Stack):
         super().__init__(scope, id, **kwargs)
 
         # The code that defines your stack goes here
-        bucket = s3.Bucket(self, "MyFirstBucket", versioned=True,)
+        bucket = s3.Bucket(self, 
+                          "MyyyyyFirstBucket-", 
+                          versioned=False,
+                          removal_policy= core.RemovalPolicy.DESTROY
+                          ) 
+
