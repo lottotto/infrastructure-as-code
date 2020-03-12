@@ -40,6 +40,7 @@ workflows:
                 - master
                 - develop
       - destroy:
+          type: approval
           context: AWS_CREDENTIALS
           requires:
             - deploy
