@@ -22,8 +22,6 @@ jobs:
       - image: danish9966/aws-cdk:0.2.1
     steps:
       - checkout
-      # - run: 
-      #     command: ls && pwd
       - run: 
         command: pip install -r requirements.txt
         working_directory: src
