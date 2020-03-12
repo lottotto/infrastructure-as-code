@@ -10,4 +10,4 @@ RUN apt-get update \
 # install aws cdk
 RUN npm install -g aws-cdk
 
-CMD ["bash"]
+CMD [ "/usr/local/bin/cdk" "--version"]
