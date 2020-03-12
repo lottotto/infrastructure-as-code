@@ -22,10 +22,12 @@ jobs:
       - image: danish9966/aws-cdk:0.2.1
     steps:
       - checkout
-      - run: ls && pwd
+      # - run: 
+      #     command: ls && pwd
+          
       - run:
           command: cdk destroy
-          workflows: src
+          working_directory: src
 workflows:
   cdk-deploy:
     jobs:
