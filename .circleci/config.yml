@@ -7,7 +7,7 @@ jobs:
       - image: danish9966/aws-cdk:0.2
     steps:
       - run: echo $AWS_ACCESS_KEY_ID
-      - run: ls
+      - run: ls -la
       - run: cat ~/.aws/credentials
 workflows:
   cdk-deploy:
