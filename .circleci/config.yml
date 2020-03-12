@@ -24,7 +24,9 @@ jobs:
       - checkout
       # - run: 
       #     command: ls && pwd
-          
+      - run: 
+        command: pip install -r requirements.txt
+        working_directory: src
       - run:
           command: cdk destroy
           working_directory: src
