@@ -7,10 +7,10 @@ jobs:
       - checkout
       - run: 
           command: pip install -r requirements.txt
-          working_directory: src
+          working_directory: code
       - run: 
           command: cdk deploy --require-approval never
-          working_directory: src
+          working_directory: code
 
 workflows:
   cdk-deploy:
