@@ -2,32 +2,16 @@ version: 2.1
 jobs:
   deploy: 
     docker: 
-      - image: danish9966/aws-cdk:0.2.1
+      - image: danish9966/aws-cdk:1.28.0
     steps:
       - checkout
-      - run: echo $AWS_ACCESS_KEY_ID
-      - run: pwd
-      - run: ls -la
-      - run: cdk --version
-      - run: cd src
-      - run: pwd
       - run: 
           command: pip install -r requirements.txt
           working_directory: src
       - run: 
-          command: cdk deploy
+          command: cdk deploy --require-approval never
           working_directory: src
-  # destroy:
-  #   docker:
-  #     - image: danish9966/aws-cdk:0.2.1
-  #   steps:
-  #     - checkout
-  #     - run: 
-  #         command: pip install -r requirements.txt
-  #         working_directory: src
-  #     - run:
-  #         command: cdk destroy --force
-  #         working_directory: src
+
 workflows:
   cdk-deploy:
     jobs:
@@ -38,12 +22,3 @@ workflows:
               only:
                 - master
                 - develop
-      # - destroy:
-      #     type: approval
-      #     context: AWS_CREDENTIALS
-      #     requires:
-      #       - deploy
-      #     filters:
-      #       branches:
-      #         only:
-      #           - develop
