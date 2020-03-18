@@ -41,7 +41,7 @@ class EC2Stack(core.Stack):
             id = 'cdk-instancd',
             availability_zone="ap-northeast-1a",
             image_id=image_id,
-            instance_type="t2.micro",
+            instance_type="t2.small",
             security_group_ids=[security_group.security_group_id],
             subnet_id=vpc.private_subnets[0].subnet_id,
             tags=[{
